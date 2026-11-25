@@ -41,6 +41,9 @@ Future<FakeRemote> setUpApp() async {
   return fake;
 }
 
+/// Root widget as in `main` (animations follow the device settings).
+Widget createRoot() => createRootWidget();
+
 extension IntegrationTester on WidgetTester {
   Future<void> launchApp({bool reduceMotion = true}) async {
     if (reduceMotion) {
