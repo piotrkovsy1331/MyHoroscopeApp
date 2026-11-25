@@ -466,6 +466,54 @@ abstract class AppLocalizations {
   /// **'Reading the stars…'**
   String get horoscopeLoading;
 
+  /// No description provided for @horoscopeWeekOf.
+  ///
+  /// In en, this message translates to:
+  /// **'Week of {date}'**
+  String horoscopeWeekOf(String date);
+
+  /// No description provided for @horoscopeStaleNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re offline — showing the reading saved on {date}.'**
+  String horoscopeStaleNotice(String date);
+
+  /// Required attribution link (provider terms). Keep the brand name untranslated.
+  ///
+  /// In en, this message translates to:
+  /// **'Powered by FreeHoroscopeAPI'**
+  String get horoscopeAttribution;
+
+  /// No description provided for @errorNetwork.
+  ///
+  /// In en, this message translates to:
+  /// **'You seem to be offline. Check your connection and try again.'**
+  String get errorNetwork;
+
+  /// No description provided for @errorServer.
+  ///
+  /// In en, this message translates to:
+  /// **'The stars are hidden right now. Please try again in a moment.'**
+  String get errorServer;
+
+  /// No description provided for @errorDataFormat.
+  ///
+  /// In en, this message translates to:
+  /// **'We received an unexpected answer from the horoscope service.'**
+  String get errorDataFormat;
+
+  /// No description provided for @errorUnexpected.
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong. Please try again.'**
+  String get errorUnexpected;
+
+  /// No description provided for @actionRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get actionRetry;
+
   /// No description provided for @favoritesTitle.
   ///
   /// In en, this message translates to:

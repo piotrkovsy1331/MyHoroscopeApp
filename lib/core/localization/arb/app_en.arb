@@ -1,24 +1,35 @@
 {
   "@@locale": "en",
   "appTitle": "Mystic Horoscope",
-  "@appTitle": {"description": "Application name shown in headers and the OS task switcher."},
+  "@appTitle": {
+    "description": "Application name shown in headers and the OS task switcher."
+  },
   "splashTagline": "Your guide to the stars",
-
   "navToday": "Today",
   "navSigns": "Signs",
   "navFavorites": "Favorites",
   "navProfile": "Profile",
-
   "todayMoonTitle": "The Moon today",
   "todayMoonIllumination": "{percent}% illuminated",
-  "@todayMoonIllumination": {"placeholders": {"percent": {"type": "int"}}},
+  "@todayMoonIllumination": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
   "todaySunSeasonTitle": "Sun season",
   "todaySunSeasonBody": "The Sun is travelling through {sign}.",
-  "@todaySunSeasonBody": {"placeholders": {"sign": {"type": "String"}}},
+  "@todaySunSeasonBody": {
+    "placeholders": {
+      "sign": {
+        "type": "String"
+      }
+    }
+  },
   "todayPickSignTitle": "Find your sign",
   "todayPickSignBody": "Choose your zodiac sign to read its daily, weekly and monthly horoscope.",
   "todayPickSignAction": "Browse signs",
-
   "moonNew": "New Moon",
   "moonWaxingCrescent": "Waxing Crescent",
   "moonFirstQuarter": "First Quarter",
@@ -27,7 +38,6 @@
   "moonWaningGibbous": "Waning Gibbous",
   "moonLastQuarter": "Last Quarter",
   "moonWaningCrescent": "Waning Crescent",
-
   "signsTitle": "Zodiac signs",
   "signAries": "Aries",
   "signTaurus": "Taurus",
@@ -42,8 +52,16 @@
   "signAquarius": "Aquarius",
   "signPisces": "Pisces",
   "signDateRange": "{start} – {end}",
-  "@signDateRange": {"placeholders": {"start": {"type": "String"}, "end": {"type": "String"}}},
-
+  "@signDateRange": {
+    "placeholders": {
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    }
+  },
   "elementFire": "Fire",
   "elementEarth": "Earth",
   "elementAir": "Air",
@@ -61,29 +79,55 @@
   "planetUranus": "Uranus",
   "planetNeptune": "Neptune",
   "planetPluto": "Pluto",
-
   "signDetailElement": "Element",
   "signDetailModality": "Modality",
   "signDetailRuler": "Ruling planet",
   "signDetailDates": "Dates",
   "signDetailReadHoroscope": "Read horoscope",
-
   "horoscopeTitle": "{sign} horoscope",
-  "@horoscopeTitle": {"placeholders": {"sign": {"type": "String"}}},
+  "@horoscopeTitle": {
+    "placeholders": {
+      "sign": {
+        "type": "String"
+      }
+    }
+  },
   "periodDaily": "Today",
   "periodWeekly": "This week",
   "periodMonthly": "This month",
   "horoscopeLoading": "Reading the stars…",
-
+  "horoscopeWeekOf": "Week of {date}",
+  "@horoscopeWeekOf": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "horoscopeStaleNotice": "You're offline — showing the reading saved on {date}.",
+  "@horoscopeStaleNotice": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "horoscopeAttribution": "Powered by FreeHoroscopeAPI",
+  "@horoscopeAttribution": {
+    "description": "Required attribution link (provider terms). Keep the brand name untranslated."
+  },
+  "errorNetwork": "You seem to be offline. Check your connection and try again.",
+  "errorServer": "The stars are hidden right now. Please try again in a moment.",
+  "errorDataFormat": "We received an unexpected answer from the horoscope service.",
+  "errorUnexpected": "Something went wrong. Please try again.",
+  "actionRetry": "Try again",
   "favoritesTitle": "Favorites",
   "favoritesEmptyTitle": "No favorites yet",
   "favoritesEmptyBody": "Tap the heart on a horoscope to keep it here.",
-
   "profileTitle": "Profile",
   "profileEmptyTitle": "Your astrological profile",
   "profileEmptyBody": "Add your birth details to discover your Sun, Moon and Rising signs.",
   "profileLicenses": "Open-source licenses",
-
   "notFoundTitle": "Lost among the stars",
   "notFoundAction": "Back to today"
 }

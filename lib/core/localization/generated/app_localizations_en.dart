@@ -205,6 +205,37 @@ class AppLocalizationsEn extends AppLocalizations {
   String get horoscopeLoading => 'Reading the stars…';
 
   @override
+  String horoscopeWeekOf(String date) {
+    return 'Week of $date';
+  }
+
+  @override
+  String horoscopeStaleNotice(String date) {
+    return 'You\'re offline — showing the reading saved on $date.';
+  }
+
+  @override
+  String get horoscopeAttribution => 'Powered by FreeHoroscopeAPI';
+
+  @override
+  String get errorNetwork =>
+      'You seem to be offline. Check your connection and try again.';
+
+  @override
+  String get errorServer =>
+      'The stars are hidden right now. Please try again in a moment.';
+
+  @override
+  String get errorDataFormat =>
+      'We received an unexpected answer from the horoscope service.';
+
+  @override
+  String get errorUnexpected => 'Something went wrong. Please try again.';
+
+  @override
+  String get actionRetry => 'Try again';
+
+  @override
   String get favoritesTitle => 'Favorites';
 
   @override

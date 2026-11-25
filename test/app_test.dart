@@ -2,6 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mystic_horoscope/app.dart';
 import 'package:mystic_horoscope/core/router/app_router.dart';
+import 'package:mystic_horoscope/core/utils/result.dart';
+import 'package:mystic_horoscope/features/horoscope/domain/entities/horoscope.dart';
+import 'package:mystic_horoscope/features/horoscope/domain/entities/horoscope_period.dart';
+import 'package:mystic_horoscope/features/horoscope/domain/usecases/get_horoscope.dart';
+import 'package:mystic_horoscope/features/horoscope/presentation/bloc/horoscope_bloc.dart';
+import 'package:mystic_horoscope/features/zodiac/domain/entities/zodiac_sign.dart';
+import 'package:mystic_horoscope/injection_container.dart';
 import 'package:mystic_horoscope/features/horoscope/presentation/pages/horoscope_page.dart';
 import 'package:mystic_horoscope/features/today/presentation/pages/today_page.dart';
 import 'package:mystic_horoscope/features/zodiac/presentation/pages/sign_detail_page.dart';
@@ -9,7 +16,35 @@ import 'package:mystic_horoscope/features/zodiac/presentation/widgets/sign_tile.
 
 import 'helpers/pump_app.dart';
 
+class _FakeGetHoroscope implements GetHoroscope {
+  @override
+  Future<Result<Horoscope>> call(
+    ZodiacSign sign,
+    HoroscopePeriod period, {
+    bool forceRefresh = false,
+  }) async => Success(
+    Horoscope(
+      sign: sign,
+      period: period,
+      periodStart: DateTime(2026, 11, 25),
+      text: 'Fake ${period.name} reading',
+      fetchedAt: DateTime(2026, 11, 25),
+    ),
+  );
+}
+
 void main() {
+  setUp(() {
+    sl.registerFactoryParam<HoroscopeBloc, ZodiacSign, HoroscopePeriod>(
+      (sign, period) => HoroscopeBloc(
+        sign: sign,
+        getHoroscope: _FakeGetHoroscope(),
+        initialPeriod: period,
+      ),
+    );
+  });
+  tearDown(sl.reset);
+
   testWidgets('splash leads to Today, then signs → detail → horoscope', (
     tester,
   ) async {
@@ -55,6 +90,7 @@ void main() {
       find.byWidgetPredicate((w) => w is SegmentedButton),
     );
     expect(segmented.selected.single.toString(), 'HoroscopePeriod.weekly');
+    expect(find.text('Fake weekly reading'), findsOneWidget);
   });
 
   testWidgets('unknown sign id shows the not-found page', (tester) async {
