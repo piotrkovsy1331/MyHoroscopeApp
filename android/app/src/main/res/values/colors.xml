@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Matches AppColors.night so the native splash blends into Flutter. -->
+    <color name="night_sky">#FF070A1F</color>
+</resources>

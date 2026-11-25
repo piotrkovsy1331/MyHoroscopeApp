@@ -94,17 +94,431 @@ abstract class AppLocalizations {
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[Locale('en')];
 
-  /// Application name shown in the OS task switcher and headers.
+  /// Application name shown in headers and the OS task switcher.
   ///
   /// In en, this message translates to:
   /// **'Mystic Horoscope'**
   String get appTitle;
 
-  /// Temporary greeting on the home screen until the real UI lands.
+  /// No description provided for @splashTagline.
   ///
   /// In en, this message translates to:
-  /// **'The stars are aligning…'**
-  String get homeWelcome;
+  /// **'Your guide to the stars'**
+  String get splashTagline;
+
+  /// No description provided for @navToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get navToday;
+
+  /// No description provided for @navSigns.
+  ///
+  /// In en, this message translates to:
+  /// **'Signs'**
+  String get navSigns;
+
+  /// No description provided for @navFavorites.
+  ///
+  /// In en, this message translates to:
+  /// **'Favorites'**
+  String get navFavorites;
+
+  /// No description provided for @navProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get navProfile;
+
+  /// No description provided for @todayMoonTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'The Moon today'**
+  String get todayMoonTitle;
+
+  /// No description provided for @todayMoonIllumination.
+  ///
+  /// In en, this message translates to:
+  /// **'{percent}% illuminated'**
+  String todayMoonIllumination(int percent);
+
+  /// No description provided for @todaySunSeasonTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sun season'**
+  String get todaySunSeasonTitle;
+
+  /// No description provided for @todaySunSeasonBody.
+  ///
+  /// In en, this message translates to:
+  /// **'The Sun is travelling through {sign}.'**
+  String todaySunSeasonBody(String sign);
+
+  /// No description provided for @todayPickSignTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Find your sign'**
+  String get todayPickSignTitle;
+
+  /// No description provided for @todayPickSignBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose your zodiac sign to read its daily, weekly and monthly horoscope.'**
+  String get todayPickSignBody;
+
+  /// No description provided for @todayPickSignAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse signs'**
+  String get todayPickSignAction;
+
+  /// No description provided for @moonNew.
+  ///
+  /// In en, this message translates to:
+  /// **'New Moon'**
+  String get moonNew;
+
+  /// No description provided for @moonWaxingCrescent.
+  ///
+  /// In en, this message translates to:
+  /// **'Waxing Crescent'**
+  String get moonWaxingCrescent;
+
+  /// No description provided for @moonFirstQuarter.
+  ///
+  /// In en, this message translates to:
+  /// **'First Quarter'**
+  String get moonFirstQuarter;
+
+  /// No description provided for @moonWaxingGibbous.
+  ///
+  /// In en, this message translates to:
+  /// **'Waxing Gibbous'**
+  String get moonWaxingGibbous;
+
+  /// No description provided for @moonFull.
+  ///
+  /// In en, this message translates to:
+  /// **'Full Moon'**
+  String get moonFull;
+
+  /// No description provided for @moonWaningGibbous.
+  ///
+  /// In en, this message translates to:
+  /// **'Waning Gibbous'**
+  String get moonWaningGibbous;
+
+  /// No description provided for @moonLastQuarter.
+  ///
+  /// In en, this message translates to:
+  /// **'Last Quarter'**
+  String get moonLastQuarter;
+
+  /// No description provided for @moonWaningCrescent.
+  ///
+  /// In en, this message translates to:
+  /// **'Waning Crescent'**
+  String get moonWaningCrescent;
+
+  /// No description provided for @signsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Zodiac signs'**
+  String get signsTitle;
+
+  /// No description provided for @signAries.
+  ///
+  /// In en, this message translates to:
+  /// **'Aries'**
+  String get signAries;
+
+  /// No description provided for @signTaurus.
+  ///
+  /// In en, this message translates to:
+  /// **'Taurus'**
+  String get signTaurus;
+
+  /// No description provided for @signGemini.
+  ///
+  /// In en, this message translates to:
+  /// **'Gemini'**
+  String get signGemini;
+
+  /// No description provided for @signCancer.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancer'**
+  String get signCancer;
+
+  /// No description provided for @signLeo.
+  ///
+  /// In en, this message translates to:
+  /// **'Leo'**
+  String get signLeo;
+
+  /// No description provided for @signVirgo.
+  ///
+  /// In en, this message translates to:
+  /// **'Virgo'**
+  String get signVirgo;
+
+  /// No description provided for @signLibra.
+  ///
+  /// In en, this message translates to:
+  /// **'Libra'**
+  String get signLibra;
+
+  /// No description provided for @signScorpio.
+  ///
+  /// In en, this message translates to:
+  /// **'Scorpio'**
+  String get signScorpio;
+
+  /// No description provided for @signSagittarius.
+  ///
+  /// In en, this message translates to:
+  /// **'Sagittarius'**
+  String get signSagittarius;
+
+  /// No description provided for @signCapricorn.
+  ///
+  /// In en, this message translates to:
+  /// **'Capricorn'**
+  String get signCapricorn;
+
+  /// No description provided for @signAquarius.
+  ///
+  /// In en, this message translates to:
+  /// **'Aquarius'**
+  String get signAquarius;
+
+  /// No description provided for @signPisces.
+  ///
+  /// In en, this message translates to:
+  /// **'Pisces'**
+  String get signPisces;
+
+  /// No description provided for @signDateRange.
+  ///
+  /// In en, this message translates to:
+  /// **'{start} – {end}'**
+  String signDateRange(String start, String end);
+
+  /// No description provided for @elementFire.
+  ///
+  /// In en, this message translates to:
+  /// **'Fire'**
+  String get elementFire;
+
+  /// No description provided for @elementEarth.
+  ///
+  /// In en, this message translates to:
+  /// **'Earth'**
+  String get elementEarth;
+
+  /// No description provided for @elementAir.
+  ///
+  /// In en, this message translates to:
+  /// **'Air'**
+  String get elementAir;
+
+  /// No description provided for @elementWater.
+  ///
+  /// In en, this message translates to:
+  /// **'Water'**
+  String get elementWater;
+
+  /// No description provided for @modalityCardinal.
+  ///
+  /// In en, this message translates to:
+  /// **'Cardinal'**
+  String get modalityCardinal;
+
+  /// No description provided for @modalityFixed.
+  ///
+  /// In en, this message translates to:
+  /// **'Fixed'**
+  String get modalityFixed;
+
+  /// No description provided for @modalityMutable.
+  ///
+  /// In en, this message translates to:
+  /// **'Mutable'**
+  String get modalityMutable;
+
+  /// No description provided for @planetSun.
+  ///
+  /// In en, this message translates to:
+  /// **'Sun'**
+  String get planetSun;
+
+  /// No description provided for @planetMoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Moon'**
+  String get planetMoon;
+
+  /// No description provided for @planetMercury.
+  ///
+  /// In en, this message translates to:
+  /// **'Mercury'**
+  String get planetMercury;
+
+  /// No description provided for @planetVenus.
+  ///
+  /// In en, this message translates to:
+  /// **'Venus'**
+  String get planetVenus;
+
+  /// No description provided for @planetMars.
+  ///
+  /// In en, this message translates to:
+  /// **'Mars'**
+  String get planetMars;
+
+  /// No description provided for @planetJupiter.
+  ///
+  /// In en, this message translates to:
+  /// **'Jupiter'**
+  String get planetJupiter;
+
+  /// No description provided for @planetSaturn.
+  ///
+  /// In en, this message translates to:
+  /// **'Saturn'**
+  String get planetSaturn;
+
+  /// No description provided for @planetUranus.
+  ///
+  /// In en, this message translates to:
+  /// **'Uranus'**
+  String get planetUranus;
+
+  /// No description provided for @planetNeptune.
+  ///
+  /// In en, this message translates to:
+  /// **'Neptune'**
+  String get planetNeptune;
+
+  /// No description provided for @planetPluto.
+  ///
+  /// In en, this message translates to:
+  /// **'Pluto'**
+  String get planetPluto;
+
+  /// No description provided for @signDetailElement.
+  ///
+  /// In en, this message translates to:
+  /// **'Element'**
+  String get signDetailElement;
+
+  /// No description provided for @signDetailModality.
+  ///
+  /// In en, this message translates to:
+  /// **'Modality'**
+  String get signDetailModality;
+
+  /// No description provided for @signDetailRuler.
+  ///
+  /// In en, this message translates to:
+  /// **'Ruling planet'**
+  String get signDetailRuler;
+
+  /// No description provided for @signDetailDates.
+  ///
+  /// In en, this message translates to:
+  /// **'Dates'**
+  String get signDetailDates;
+
+  /// No description provided for @signDetailReadHoroscope.
+  ///
+  /// In en, this message translates to:
+  /// **'Read horoscope'**
+  String get signDetailReadHoroscope;
+
+  /// No description provided for @horoscopeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'{sign} horoscope'**
+  String horoscopeTitle(String sign);
+
+  /// No description provided for @periodDaily.
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get periodDaily;
+
+  /// No description provided for @periodWeekly.
+  ///
+  /// In en, this message translates to:
+  /// **'This week'**
+  String get periodWeekly;
+
+  /// No description provided for @periodMonthly.
+  ///
+  /// In en, this message translates to:
+  /// **'This month'**
+  String get periodMonthly;
+
+  /// No description provided for @horoscopeLoading.
+  ///
+  /// In en, this message translates to:
+  /// **'Reading the stars…'**
+  String get horoscopeLoading;
+
+  /// No description provided for @favoritesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Favorites'**
+  String get favoritesTitle;
+
+  /// No description provided for @favoritesEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No favorites yet'**
+  String get favoritesEmptyTitle;
+
+  /// No description provided for @favoritesEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap the heart on a horoscope to keep it here.'**
+  String get favoritesEmptyBody;
+
+  /// No description provided for @profileTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profileTitle;
+
+  /// No description provided for @profileEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your astrological profile'**
+  String get profileEmptyTitle;
+
+  /// No description provided for @profileEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Add your birth details to discover your Sun, Moon and Rising signs.'**
+  String get profileEmptyBody;
+
+  /// No description provided for @profileLicenses.
+  ///
+  /// In en, this message translates to:
+  /// **'Open-source licenses'**
+  String get profileLicenses;
+
+  /// No description provided for @notFoundTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Lost among the stars'**
+  String get notFoundTitle;
+
+  /// No description provided for @notFoundAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to today'**
+  String get notFoundAction;
 }
 
 class _AppLocalizationsDelegate

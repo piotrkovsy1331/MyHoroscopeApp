@@ -1,4 +1,14 @@
 /// Route paths in one place, so navigation never uses string literals.
 abstract final class AppRoutes {
-  static const home = '/';
+  static const splash = '/splash';
+  static const today = '/today';
+  static const signs = '/signs';
+  static const favorites = '/favorites';
+  static const profile = '/profile';
+
+  /// Path parameter holding a `ZodiacSign.id`.
+  static const signIdParam = 'signId';
+
+  static String signDetail(String signId) => '$signs/$signId';
+  static String horoscope(String signId) => '$signs/$signId/horoscope';
 }

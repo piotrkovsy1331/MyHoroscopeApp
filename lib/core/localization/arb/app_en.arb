@@ -1,11 +1,89 @@
 {
   "@@locale": "en",
   "appTitle": "Mystic Horoscope",
-  "@appTitle": {
-    "description": "Application name shown in the OS task switcher and headers."
-  },
-  "homeWelcome": "The stars are aligning…",
-  "@homeWelcome": {
-    "description": "Temporary greeting on the home screen until the real UI lands."
-  }
+  "@appTitle": {"description": "Application name shown in headers and the OS task switcher."},
+  "splashTagline": "Your guide to the stars",
+
+  "navToday": "Today",
+  "navSigns": "Signs",
+  "navFavorites": "Favorites",
+  "navProfile": "Profile",
+
+  "todayMoonTitle": "The Moon today",
+  "todayMoonIllumination": "{percent}% illuminated",
+  "@todayMoonIllumination": {"placeholders": {"percent": {"type": "int"}}},
+  "todaySunSeasonTitle": "Sun season",
+  "todaySunSeasonBody": "The Sun is travelling through {sign}.",
+  "@todaySunSeasonBody": {"placeholders": {"sign": {"type": "String"}}},
+  "todayPickSignTitle": "Find your sign",
+  "todayPickSignBody": "Choose your zodiac sign to read its daily, weekly and monthly horoscope.",
+  "todayPickSignAction": "Browse signs",
+
+  "moonNew": "New Moon",
+  "moonWaxingCrescent": "Waxing Crescent",
+  "moonFirstQuarter": "First Quarter",
+  "moonWaxingGibbous": "Waxing Gibbous",
+  "moonFull": "Full Moon",
+  "moonWaningGibbous": "Waning Gibbous",
+  "moonLastQuarter": "Last Quarter",
+  "moonWaningCrescent": "Waning Crescent",
+
+  "signsTitle": "Zodiac signs",
+  "signAries": "Aries",
+  "signTaurus": "Taurus",
+  "signGemini": "Gemini",
+  "signCancer": "Cancer",
+  "signLeo": "Leo",
+  "signVirgo": "Virgo",
+  "signLibra": "Libra",
+  "signScorpio": "Scorpio",
+  "signSagittarius": "Sagittarius",
+  "signCapricorn": "Capricorn",
+  "signAquarius": "Aquarius",
+  "signPisces": "Pisces",
+  "signDateRange": "{start} – {end}",
+  "@signDateRange": {"placeholders": {"start": {"type": "String"}, "end": {"type": "String"}}},
+
+  "elementFire": "Fire",
+  "elementEarth": "Earth",
+  "elementAir": "Air",
+  "elementWater": "Water",
+  "modalityCardinal": "Cardinal",
+  "modalityFixed": "Fixed",
+  "modalityMutable": "Mutable",
+  "planetSun": "Sun",
+  "planetMoon": "Moon",
+  "planetMercury": "Mercury",
+  "planetVenus": "Venus",
+  "planetMars": "Mars",
+  "planetJupiter": "Jupiter",
+  "planetSaturn": "Saturn",
+  "planetUranus": "Uranus",
+  "planetNeptune": "Neptune",
+  "planetPluto": "Pluto",
+
+  "signDetailElement": "Element",
+  "signDetailModality": "Modality",
+  "signDetailRuler": "Ruling planet",
+  "signDetailDates": "Dates",
+  "signDetailReadHoroscope": "Read horoscope",
+
+  "horoscopeTitle": "{sign} horoscope",
+  "@horoscopeTitle": {"placeholders": {"sign": {"type": "String"}}},
+  "periodDaily": "Today",
+  "periodWeekly": "This week",
+  "periodMonthly": "This month",
+  "horoscopeLoading": "Reading the stars…",
+
+  "favoritesTitle": "Favorites",
+  "favoritesEmptyTitle": "No favorites yet",
+  "favoritesEmptyBody": "Tap the heart on a horoscope to keep it here.",
+
+  "profileTitle": "Profile",
+  "profileEmptyTitle": "Your astrological profile",
+  "profileEmptyBody": "Add your birth details to discover your Sun, Moon and Rising signs.",
+  "profileLicenses": "Open-source licenses",
+
+  "notFoundTitle": "Lost among the stars",
+  "notFoundAction": "Back to today"
 }

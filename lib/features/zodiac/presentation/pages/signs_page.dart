@@ -1,0 +1,42 @@
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+import '../../../../core/localization/l10n_extension.dart';
+import '../../../../core/router/app_routes.dart';
+import '../../../../core/widgets/fade_slide_in.dart';
+import '../../domain/entities/zodiac_sign.dart';
+import '../widgets/sign_tile.dart';
+
+class SignsPage extends StatelessWidget {
+  const SignsPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final width = MediaQuery.sizeOf(context).width;
+    final columns = width >= 600 ? 4 : 3;
+
+    return Scaffold(
+      appBar: AppBar(title: Text(context.l10n.signsTitle)),
+      body: GridView.builder(
+        padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: columns,
+          mainAxisSpacing: 12,
+          crossAxisSpacing: 12,
+          childAspectRatio: 0.82,
+        ),
+        itemCount: ZodiacSign.values.length,
+        itemBuilder: (context, index) {
+          final sign = ZodiacSign.values[index];
+          return FadeSlideIn(
+            delay: Duration(milliseconds: 40 * index),
+            child: SignTile(
+              sign: sign,
+              onTap: () => context.push(AppRoutes.signDetail(sign.id)),
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
