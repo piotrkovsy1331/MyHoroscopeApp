@@ -1,5 +1,7 @@
+import 'dart:async';
 import 'dart:math' as math;
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../theme/app_colors.dart';
@@ -7,47 +9,80 @@ import '../utils/motion.dart';
 
 /// Softly twinkling, slowly drifting star field.
 ///
-/// Performance: one [AnimationController] drives a [CustomPainter] through
-/// its `repaint` listenable (no widget rebuilds), stars are generated once,
-/// and the layer is isolated with a [RepaintBoundary]. With reduced motion
-/// enabled the sky is rendered as a still frame.
+/// Performance:
+/// - Repaints at most [frameInterval] (30 fps) instead of every vsync: the
+///   twinkle cycles last seconds, so 30 fps looks identical while a 120 Hz
+///   screen does a quarter of the work when the app is otherwise idle.
+/// - A periodic timer (not a Ticker) drives the painter's `repaint`
+///   listenable, so no frames are scheduled in between and no widgets
+///   rebuild; the timer stops while the app is not in the foreground.
+/// - Stars are generated once; the layer is isolated by a [RepaintBoundary].
+/// - With reduced motion enabled the sky is a single still frame.
 class StarField extends StatefulWidget {
   const StarField({super.key, this.starCount = 140, this.seed = 7});
 
   final int starCount;
   final int seed;
 
+  static const frameInterval = Duration(milliseconds: 33);
+
   @override
   State<StarField> createState() => _StarFieldState();
 }
 
-class _StarFieldState extends State<StarField>
-    with SingleTickerProviderStateMixin {
+class _StarFieldState extends State<StarField> with WidgetsBindingObserver {
   /// Every periodic effect completes an integer number of cycles in this
   /// period, so the animation loops seamlessly.
   static const _period = Duration(minutes: 3);
+  static const _stillPhase = 0.25;
 
-  late final AnimationController _controller = AnimationController(
-    vsync: this,
-    duration: _period,
-  );
+  /// Position within [_period], 0..1.
+  final ValueNotifier<double> _phase = ValueNotifier(_stillPhase);
+  final Stopwatch _clock = Stopwatch();
   late final List<_Star> _stars = _generate(widget.starCount, widget.seed);
+  Timer? _timer;
+  bool _reduceMotion = false;
+  bool _foreground = true;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    if (reduceMotionOf(context)) {
-      _controller
-        ..stop()
-        ..value = 0.25;
-    } else if (!_controller.isAnimating) {
-      _controller.repeat();
+    _reduceMotion = reduceMotionOf(context);
+    _sync();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    _foreground = state == AppLifecycleState.resumed;
+    _sync();
+  }
+
+  void _sync() {
+    if (_reduceMotion || !_foreground) {
+      _timer?.cancel();
+      _timer = null;
+      _clock.stop();
+      if (_reduceMotion) _phase.value = _stillPhase;
+    } else if (_timer == null) {
+      _clock.start();
+      _timer = Timer.periodic(StarField.frameInterval, (_) {
+        final elapsed = _clock.elapsedMicroseconds / _period.inMicroseconds;
+        _phase.value = (_stillPhase + elapsed) % 1.0;
+      });
     }
   }
 
   @override
   void dispose() {
-    _controller.dispose();
+    WidgetsBinding.instance.removeObserver(this);
+    _timer?.cancel();
+    _phase.dispose();
     super.dispose();
   }
 
@@ -55,7 +90,7 @@ class _StarFieldState extends State<StarField>
   Widget build(BuildContext context) {
     return RepaintBoundary(
       child: CustomPaint(
-        painter: _StarFieldPainter(_stars, _controller),
+        painter: _StarFieldPainter(_stars, _phase),
         size: Size.infinite,
       ),
     );
@@ -106,15 +141,15 @@ class _Star {
 }
 
 class _StarFieldPainter extends CustomPainter {
-  _StarFieldPainter(this.stars, this.animation) : super(repaint: animation);
+  _StarFieldPainter(this.stars, this.phase) : super(repaint: phase);
 
   final List<_Star> stars;
-  final Animation<double> animation;
+  final ValueListenable<double> phase;
   final Paint _paint = Paint();
 
   @override
   void paint(Canvas canvas, Size size) {
-    final t = animation.value;
+    final t = phase.value;
     for (final star in stars) {
       final twinkle =
           0.5 +

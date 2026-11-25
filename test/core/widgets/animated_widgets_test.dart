@@ -30,16 +30,38 @@ void main() {
     expect(tester.widget<Opacity>(find.byType(Opacity)).opacity, 1);
   });
 
-  testWidgets('StarField does not schedule frames with reduced motion', (
+  testWidgets('StarField schedules no frames with reduced motion', (
     tester,
   ) async {
     await tester.pumpWidget(_wrap(const StarField(), reduceMotion: true));
+    await tester.binding.delayed(const Duration(milliseconds: 200));
     expect(tester.binding.hasScheduledFrame, isFalse);
   });
 
-  testWidgets('StarField animates and disposes cleanly', (tester) async {
+  testWidgets('StarField repaints at ~30 fps, not every vsync', (tester) async {
     await tester.pumpWidget(_wrap(const StarField()));
-    await tester.pump(const Duration(seconds: 1));
+    await tester.pump();
+    // No repaint is requested before the 33 ms interval elapses...
+    await tester.binding.delayed(const Duration(milliseconds: 20));
+    expect(tester.binding.hasScheduledFrame, isFalse);
+    // ...and one is requested once it does.
+    await tester.binding.delayed(const Duration(milliseconds: 20));
+    expect(tester.binding.hasScheduledFrame, isTrue);
+    await tester.pumpWidget(const SizedBox()); // cancels the timer
+  });
+
+  testWidgets('StarField stops while the app is not in the foreground', (
+    tester,
+  ) async {
+    await tester.pumpWidget(_wrap(const StarField()));
+    await tester.pump();
+    tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.inactive);
+    await tester.pump();
+    await tester.binding.delayed(const Duration(milliseconds: 200));
+    expect(tester.binding.hasScheduledFrame, isFalse);
+
+    tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.resumed);
+    await tester.binding.delayed(const Duration(milliseconds: 40));
     expect(tester.binding.hasScheduledFrame, isTrue);
     await tester.pumpWidget(const SizedBox());
   });
