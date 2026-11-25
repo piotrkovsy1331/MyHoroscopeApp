@@ -347,6 +347,121 @@ class AppLocalizationsEn extends AppLocalizations {
   String get profileLicenses => 'Open-source licenses';
 
   @override
+  String get profileAddDetails => 'Add birth details';
+
+  @override
+  String get profilePrivacyNote =>
+      'Your birth details are stored only on this device.';
+
+  @override
+  String get profileChartTitle => 'Your chart';
+
+  @override
+  String get profileSun => 'Sun sign';
+
+  @override
+  String get profileMoon => 'Moon sign';
+
+  @override
+  String get profileRising => 'Rising sign';
+
+  @override
+  String profileOr(String first, String second) {
+    return '$first or $second';
+  }
+
+  @override
+  String get profileHintAddTime => 'Add your birth time to pin this down.';
+
+  @override
+  String get profileHintAddPlace => 'Add your birthplace to pin this down.';
+
+  @override
+  String get profileNeedsTimeAndPlace =>
+      'Needs your birth time and birthplace.';
+
+  @override
+  String get profilePolar => 'Not defined this close to the poles.';
+
+  @override
+  String get profileDetailsTitle => 'Birth details';
+
+  @override
+  String get profileTimeUnknown => 'Time unknown';
+
+  @override
+  String get profilePlaceUnknown => 'Place unknown';
+
+  @override
+  String get profileEdit => 'Edit';
+
+  @override
+  String get profileRemove => 'Remove profile';
+
+  @override
+  String get profileRemoveConfirmTitle => 'Remove your profile?';
+
+  @override
+  String get profileRemoveConfirmBody =>
+      'Your birth details will be deleted from this device.';
+
+  @override
+  String get actionCancel => 'Cancel';
+
+  @override
+  String get actionRemove => 'Remove';
+
+  @override
+  String get profileReadMyHoroscope => 'Read my horoscope';
+
+  @override
+  String get todayYourSignTitle => 'Your sign';
+
+  @override
+  String get todayYourSignAction => 'Read today\'s horoscope';
+
+  @override
+  String get birthFormTitle => 'Birth details';
+
+  @override
+  String get birthFormDate => 'Date of birth';
+
+  @override
+  String get birthFormDatePlaceholder => 'Choose a date';
+
+  @override
+  String get birthFormKnowTime => 'I know my birth time';
+
+  @override
+  String get birthFormTime => 'Time of birth';
+
+  @override
+  String get birthFormTimePlaceholder => 'Choose a time';
+
+  @override
+  String get birthFormTimeHint =>
+      'Needed for your Rising sign and an exact Moon sign.';
+
+  @override
+  String get birthFormPlace => 'Place of birth';
+
+  @override
+  String get birthFormPlaceHint => 'Search for a city';
+
+  @override
+  String get birthFormPlaceNoResults =>
+      'No matching city. Try the nearest larger city.';
+
+  @override
+  String get birthFormPlaceClear => 'Clear place';
+
+  @override
+  String get birthFormPlaceAttribution => 'Place data © GeoNames (CC BY 4.0)';
+
+  @override
+  String get birthFormSave => 'Save';
+
+  @override
   String get notFoundTitle => 'Lost among the stars';
 
   @override

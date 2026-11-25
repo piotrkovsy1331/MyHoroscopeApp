@@ -3,12 +3,15 @@ import 'package:go_router/go_router.dart';
 
 import '../../features/favorites/presentation/pages/favorites_page.dart';
 import '../../features/horoscope/presentation/pages/horoscope_page.dart';
+import '../../features/profile/domain/usecases/search_places.dart';
+import '../../features/profile/presentation/pages/birth_details_page.dart';
 import '../../features/profile/presentation/pages/profile_page.dart';
 import '../../features/splash/presentation/pages/splash_page.dart';
 import '../../features/today/presentation/pages/today_page.dart';
 import '../../features/zodiac/domain/entities/zodiac_sign.dart';
 import '../../features/zodiac/presentation/pages/sign_detail_page.dart';
 import '../../features/zodiac/presentation/pages/signs_page.dart';
+import '../../injection_container.dart';
 import '../widgets/not_found_page.dart';
 import 'app_routes.dart';
 import 'main_shell.dart';
@@ -70,6 +73,13 @@ GoRouter createAppRouter({
             GoRoute(
               path: AppRoutes.profile,
               builder: (context, state) => const ProfilePage(),
+              routes: [
+                GoRoute(
+                  path: 'edit',
+                  builder: (context, state) =>
+                      BirthDetailsPage(searchPlaces: sl<SearchPlaces>().call),
+                ),
+              ],
             ),
           ],
         ),

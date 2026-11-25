@@ -706,6 +706,222 @@ abstract class AppLocalizations {
   /// **'Open-source licenses'**
   String get profileLicenses;
 
+  /// No description provided for @profileAddDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Add birth details'**
+  String get profileAddDetails;
+
+  /// No description provided for @profilePrivacyNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Your birth details are stored only on this device.'**
+  String get profilePrivacyNote;
+
+  /// No description provided for @profileChartTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your chart'**
+  String get profileChartTitle;
+
+  /// No description provided for @profileSun.
+  ///
+  /// In en, this message translates to:
+  /// **'Sun sign'**
+  String get profileSun;
+
+  /// No description provided for @profileMoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Moon sign'**
+  String get profileMoon;
+
+  /// No description provided for @profileRising.
+  ///
+  /// In en, this message translates to:
+  /// **'Rising sign'**
+  String get profileRising;
+
+  /// No description provided for @profileOr.
+  ///
+  /// In en, this message translates to:
+  /// **'{first} or {second}'**
+  String profileOr(String first, String second);
+
+  /// No description provided for @profileHintAddTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Add your birth time to pin this down.'**
+  String get profileHintAddTime;
+
+  /// No description provided for @profileHintAddPlace.
+  ///
+  /// In en, this message translates to:
+  /// **'Add your birthplace to pin this down.'**
+  String get profileHintAddPlace;
+
+  /// No description provided for @profileNeedsTimeAndPlace.
+  ///
+  /// In en, this message translates to:
+  /// **'Needs your birth time and birthplace.'**
+  String get profileNeedsTimeAndPlace;
+
+  /// No description provided for @profilePolar.
+  ///
+  /// In en, this message translates to:
+  /// **'Not defined this close to the poles.'**
+  String get profilePolar;
+
+  /// No description provided for @profileDetailsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Birth details'**
+  String get profileDetailsTitle;
+
+  /// No description provided for @profileTimeUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'Time unknown'**
+  String get profileTimeUnknown;
+
+  /// No description provided for @profilePlaceUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'Place unknown'**
+  String get profilePlaceUnknown;
+
+  /// No description provided for @profileEdit.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get profileEdit;
+
+  /// No description provided for @profileRemove.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove profile'**
+  String get profileRemove;
+
+  /// No description provided for @profileRemoveConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove your profile?'**
+  String get profileRemoveConfirmTitle;
+
+  /// No description provided for @profileRemoveConfirmBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Your birth details will be deleted from this device.'**
+  String get profileRemoveConfirmBody;
+
+  /// No description provided for @actionCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get actionCancel;
+
+  /// No description provided for @actionRemove.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove'**
+  String get actionRemove;
+
+  /// No description provided for @profileReadMyHoroscope.
+  ///
+  /// In en, this message translates to:
+  /// **'Read my horoscope'**
+  String get profileReadMyHoroscope;
+
+  /// No description provided for @todayYourSignTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your sign'**
+  String get todayYourSignTitle;
+
+  /// No description provided for @todayYourSignAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Read today\'s horoscope'**
+  String get todayYourSignAction;
+
+  /// No description provided for @birthFormTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Birth details'**
+  String get birthFormTitle;
+
+  /// No description provided for @birthFormDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Date of birth'**
+  String get birthFormDate;
+
+  /// No description provided for @birthFormDatePlaceholder.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a date'**
+  String get birthFormDatePlaceholder;
+
+  /// No description provided for @birthFormKnowTime.
+  ///
+  /// In en, this message translates to:
+  /// **'I know my birth time'**
+  String get birthFormKnowTime;
+
+  /// No description provided for @birthFormTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Time of birth'**
+  String get birthFormTime;
+
+  /// No description provided for @birthFormTimePlaceholder.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a time'**
+  String get birthFormTimePlaceholder;
+
+  /// No description provided for @birthFormTimeHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Needed for your Rising sign and an exact Moon sign.'**
+  String get birthFormTimeHint;
+
+  /// No description provided for @birthFormPlace.
+  ///
+  /// In en, this message translates to:
+  /// **'Place of birth'**
+  String get birthFormPlace;
+
+  /// No description provided for @birthFormPlaceHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Search for a city'**
+  String get birthFormPlaceHint;
+
+  /// No description provided for @birthFormPlaceNoResults.
+  ///
+  /// In en, this message translates to:
+  /// **'No matching city. Try the nearest larger city.'**
+  String get birthFormPlaceNoResults;
+
+  /// No description provided for @birthFormPlaceClear.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear place'**
+  String get birthFormPlaceClear;
+
+  /// No description provided for @birthFormPlaceAttribution.
+  ///
+  /// In en, this message translates to:
+  /// **'Place data © GeoNames (CC BY 4.0)'**
+  String get birthFormPlaceAttribution;
+
+  /// No description provided for @birthFormSave.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get birthFormSave;
+
   /// No description provided for @notFoundTitle.
   ///
   /// In en, this message translates to:

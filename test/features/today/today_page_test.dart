@@ -1,5 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mystic_horoscope/features/profile/domain/entities/birth_data.dart';
+import 'package:mystic_horoscope/features/profile/domain/entities/natal_chart.dart';
+import 'package:mystic_horoscope/features/profile/presentation/cubit/profile_cubit.dart';
 import 'package:mystic_horoscope/features/today/presentation/pages/today_page.dart';
+import 'package:mystic_horoscope/features/zodiac/domain/entities/zodiac_sign.dart';
 
 import '../../helpers/pump_app.dart';
 
@@ -17,5 +21,29 @@ void main() {
       find.text('The Sun is travelling through Aquarius.'),
       findsOneWidget,
     );
+  });
+
+  testWidgets('shows a personal card when the Sun sign is known', (
+    tester,
+  ) async {
+    await tester.pumpLocalized(
+      TodayPage(now: DateTime(2024, 1, 25, 20)),
+      profile: profileCubitWith(
+        ProfileLoaded(
+          birthData: BirthData(date: DateTime(1990, 7, 25)),
+          chart: const NatalChart(
+            sun: KnownPlacement(ZodiacSign.leo),
+            moon: KnownPlacement(ZodiacSign.virgo),
+            ascendant: UnavailablePlacement(
+              UnavailableReason.needsTimeAndPlace,
+            ),
+          ),
+        ),
+      ),
+    );
+    expect(find.text('Your sign'), findsOneWidget);
+    expect(find.text('Leo'), findsOneWidget);
+    expect(find.text("Read today's horoscope"), findsOneWidget);
+    expect(find.text('Find your sign'), findsNothing);
   });
 }

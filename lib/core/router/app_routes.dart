@@ -5,6 +5,7 @@ abstract final class AppRoutes {
   static const signs = '/signs';
   static const favorites = '/favorites';
   static const profile = '/profile';
+  static const profileEdit = '/profile/edit';
 
   /// Path parameter holding a `ZodiacSign.id`.
   static const signIdParam = 'signId';

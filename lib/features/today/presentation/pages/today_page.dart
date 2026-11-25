@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 
@@ -9,6 +10,7 @@ import '../../../../core/utils/moon_phase.dart';
 import '../../../../core/widgets/fade_slide_in.dart';
 import '../../../../core/widgets/glass_card.dart';
 import '../../../../core/widgets/moon_phase_view.dart';
+import '../../../profile/presentation/cubit/profile_cubit.dart';
 import '../../../zodiac/domain/entities/zodiac_sign.dart';
 import '../../../zodiac/presentation/widgets/zodiac_glyph.dart';
 import '../../../zodiac/presentation/zodiac_l10n.dart';
@@ -55,20 +57,10 @@ class TodayPage extends StatelessWidget {
           ],
         ),
       ),
-      GlassCard(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(l10n.todayPickSignTitle, style: theme.textTheme.titleLarge),
-            const SizedBox(height: 6),
-            Text(l10n.todayPickSignBody, style: theme.textTheme.bodyMedium),
-            const SizedBox(height: 16),
-            FilledButton(
-              onPressed: () => context.go(AppRoutes.signs),
-              child: Text(l10n.todayPickSignAction),
-            ),
-          ],
-        ),
+      BlocSelector<ProfileCubit, ProfileState, ZodiacSign?>(
+        selector: (state) => state is ProfileLoaded ? state.sunSign : null,
+        builder: (context, sign) =>
+            sign == null ? const _PickSignCard() : _YourSignCard(sign: sign),
       ),
     ];
 
@@ -148,4 +140,83 @@ class _MoonCard extends StatelessWidget {
         MoonPhaseName.lastQuarter => l10n.moonLastQuarter,
         MoonPhaseName.waningCrescent => l10n.moonWaningCrescent,
       };
+}
+
+class _PickSignCard extends StatelessWidget {
+  const _PickSignCard();
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    final theme = Theme.of(context);
+    return GlassCard(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(l10n.todayPickSignTitle, style: theme.textTheme.titleLarge),
+          const SizedBox(height: 6),
+          Text(l10n.todayPickSignBody, style: theme.textTheme.bodyMedium),
+          const SizedBox(height: 16),
+          Wrap(
+            spacing: 12,
+            runSpacing: 8,
+            children: [
+              FilledButton(
+                onPressed: () => context.go(AppRoutes.signs),
+                child: Text(l10n.todayPickSignAction),
+              ),
+              OutlinedButton(
+                onPressed: () => context.go(AppRoutes.profileEdit),
+                child: Text(l10n.profileAddDetails),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _YourSignCard extends StatelessWidget {
+  const _YourSignCard({required this.sign});
+
+  final ZodiacSign sign;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    final theme = Theme.of(context);
+    return GlassCard(
+      onTap: () => context.go(AppRoutes.horoscope(sign.id)),
+      child: Row(
+        children: [
+          ZodiacGlyph(sign: sign, size: 44, glow: true),
+          const SizedBox(width: 18),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  l10n.todayYourSignTitle,
+                  style: theme.textTheme.bodyMedium,
+                ),
+                Text(
+                  sign.localizedName(l10n),
+                  style: theme.textTheme.titleLarge,
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  l10n.todayYourSignAction,
+                  style: theme.textTheme.labelLarge?.copyWith(
+                    color: theme.colorScheme.primary,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const Icon(Icons.chevron_right),
+        ],
+      ),
+    );
+  }
 }

@@ -153,6 +153,52 @@
   "profileEmptyTitle": "Your astrological profile",
   "profileEmptyBody": "Add your birth details to discover your Sun, Moon and Rising signs.",
   "profileLicenses": "Open-source licenses",
+  "profileAddDetails": "Add birth details",
+  "profilePrivacyNote": "Your birth details are stored only on this device.",
+  "profileChartTitle": "Your chart",
+  "profileSun": "Sun sign",
+  "profileMoon": "Moon sign",
+  "profileRising": "Rising sign",
+  "profileOr": "{first} or {second}",
+  "@profileOr": {
+    "placeholders": {
+      "first": {
+        "type": "String"
+      },
+      "second": {
+        "type": "String"
+      }
+    }
+  },
+  "profileHintAddTime": "Add your birth time to pin this down.",
+  "profileHintAddPlace": "Add your birthplace to pin this down.",
+  "profileNeedsTimeAndPlace": "Needs your birth time and birthplace.",
+  "profilePolar": "Not defined this close to the poles.",
+  "profileDetailsTitle": "Birth details",
+  "profileTimeUnknown": "Time unknown",
+  "profilePlaceUnknown": "Place unknown",
+  "profileEdit": "Edit",
+  "profileRemove": "Remove profile",
+  "profileRemoveConfirmTitle": "Remove your profile?",
+  "profileRemoveConfirmBody": "Your birth details will be deleted from this device.",
+  "actionCancel": "Cancel",
+  "actionRemove": "Remove",
+  "profileReadMyHoroscope": "Read my horoscope",
+  "todayYourSignTitle": "Your sign",
+  "todayYourSignAction": "Read today's horoscope",
+  "birthFormTitle": "Birth details",
+  "birthFormDate": "Date of birth",
+  "birthFormDatePlaceholder": "Choose a date",
+  "birthFormKnowTime": "I know my birth time",
+  "birthFormTime": "Time of birth",
+  "birthFormTimePlaceholder": "Choose a time",
+  "birthFormTimeHint": "Needed for your Rising sign and an exact Moon sign.",
+  "birthFormPlace": "Place of birth",
+  "birthFormPlaceHint": "Search for a city",
+  "birthFormPlaceNoResults": "No matching city. Try the nearest larger city.",
+  "birthFormPlaceClear": "Clear place",
+  "birthFormPlaceAttribution": "Place data © GeoNames (CC BY 4.0)",
+  "birthFormSave": "Save",
   "notFoundTitle": "Lost among the stars",
   "notFoundAction": "Back to today"
 }

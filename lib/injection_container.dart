@@ -14,6 +14,17 @@ import 'features/horoscope/domain/entities/horoscope_period.dart';
 import 'features/horoscope/domain/repositories/horoscope_repository.dart';
 import 'features/horoscope/domain/usecases/get_horoscope.dart';
 import 'features/horoscope/presentation/bloc/horoscope_bloc.dart';
+import 'features/profile/data/datasources/places_local_data_source.dart';
+import 'features/profile/data/datasources/profile_local_data_source.dart';
+import 'features/profile/data/repositories/places_repository_impl.dart';
+import 'features/profile/data/repositories/profile_repository_impl.dart';
+import 'features/profile/data/services/tz_time_zone_resolver.dart';
+import 'features/profile/domain/repositories/places_repository.dart';
+import 'features/profile/domain/repositories/profile_repository.dart';
+import 'features/profile/domain/services/natal_calculator.dart';
+import 'features/profile/domain/services/time_zone_resolver.dart';
+import 'features/profile/domain/usecases/search_places.dart';
+import 'features/profile/presentation/cubit/profile_cubit.dart';
 import 'features/zodiac/domain/entities/zodiac_sign.dart';
 
 /// Global service locator. Only the composition root (main/app) and
@@ -39,6 +50,7 @@ Future<void> initDependencies() async {
     ..registerLazySingleton<GoRouter>(createAppRouter);
 
   _initHoroscope();
+  _initProfile();
 }
 
 void _initHoroscope() {
@@ -56,4 +68,19 @@ void _initHoroscope() {
       (sign, period) =>
           HoroscopeBloc(sign: sign, getHoroscope: sl(), initialPeriod: period),
     );
+}
+
+void _initProfile() {
+  sl
+    ..registerLazySingleton(() => ProfileLocalDataSource(sl()))
+    ..registerLazySingleton<ProfileRepository>(
+      () => ProfileRepositoryImpl(sl()),
+    )
+    ..registerLazySingleton(PlacesLocalDataSource.new)
+    ..registerLazySingleton<PlacesRepository>(() => PlacesRepositoryImpl(sl()))
+    ..registerLazySingleton(() => SearchPlaces(sl()))
+    // Lazy: the IANA history is only loaded when first needed.
+    ..registerLazySingleton<TimeZoneResolver>(TzTimeZoneResolver.new)
+    ..registerLazySingleton(() => NatalCalculator(sl()))
+    ..registerFactory(() => ProfileCubit(repository: sl(), calculator: sl()));
 }
