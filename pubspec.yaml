@@ -19,6 +19,7 @@ dependencies:
   http: ^1.6.0
   intl: ^0.20.3
   shared_preferences: ^2.5.6
+  timezone: ^0.11.2
   url_launcher: ^6.3.3
 
 dev_dependencies:
@@ -35,6 +36,7 @@ flutter:
 
   assets:
     - assets/licenses/
+    - assets/data/
 
   fonts:
     - family: Cinzel

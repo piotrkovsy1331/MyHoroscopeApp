@@ -153,6 +153,10 @@ enum ZodiacSign {
   static ZodiacSign fromDate(DateTime date) =>
       values.firstWhere((sign) => sign.containsDate(date));
 
+  /// Sign containing the tropical ecliptic [longitude] (degrees).
+  static ZodiacSign fromLongitude(double longitude) =>
+      values[((longitude % 360 + 360) % 360 ~/ 30) % 12];
+
   /// Parses a route/API id; returns null for unknown values.
   static ZodiacSign? tryParse(String? id) {
     for (final sign in values) {

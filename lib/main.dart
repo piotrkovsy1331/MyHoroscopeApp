@@ -5,13 +5,13 @@ import 'package:go_router/go_router.dart';
 
 import 'app.dart';
 import 'core/bloc/app_bloc_observer.dart';
-import 'core/utils/font_licenses.dart';
+import 'core/utils/asset_licenses.dart';
 import 'injection_container.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   if (kDebugMode) Bloc.observer = const AppBlocObserver();
-  registerFontLicenses();
+  registerAssetLicenses();
   await initDependencies();
   runApp(MysticApp(router: sl<GoRouter>()));
 }
