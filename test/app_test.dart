@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mystic_horoscope/app.dart';
 import 'package:mystic_horoscope/core/router/app_router.dart';
@@ -11,7 +10,6 @@ import 'package:mystic_horoscope/features/horoscope/presentation/bloc/horoscope_
 import 'package:mystic_horoscope/features/zodiac/domain/entities/zodiac_sign.dart';
 import 'package:mystic_horoscope/injection_container.dart';
 import 'package:mystic_horoscope/features/horoscope/presentation/pages/horoscope_page.dart';
-import 'package:mystic_horoscope/features/profile/presentation/cubit/profile_cubit.dart';
 import 'package:mystic_horoscope/features/today/presentation/pages/today_page.dart';
 import 'package:mystic_horoscope/features/zodiac/presentation/pages/sign_detail_page.dart';
 import 'package:mystic_horoscope/features/zodiac/presentation/widgets/sign_tile.dart';
@@ -52,10 +50,7 @@ void main() {
   ) async {
     tester.enableReducedMotion();
     await tester.pumpWidget(
-      BlocProvider<ProfileCubit>.value(
-        value: profileCubitWith(const ProfileEmpty()),
-        child: MysticApp(router: createAppRouter()),
-      ),
+      withAppCubits(MysticApp(router: createAppRouter())),
     );
 
     expect(find.text('Your guide to the stars'), findsOneWidget);
@@ -103,11 +98,8 @@ void main() {
   testWidgets('unknown sign id shows the not-found page', (tester) async {
     tester.enableReducedMotion();
     await tester.pumpWidget(
-      BlocProvider<ProfileCubit>.value(
-        value: profileCubitWith(const ProfileEmpty()),
-        child: MysticApp(
-          router: createAppRouter(initialLocation: '/signs/ophiuchus'),
-        ),
+      withAppCubits(
+        MysticApp(router: createAppRouter(initialLocation: '/signs/ophiuchus')),
       ),
     );
     await tester.pumpAndSettle();

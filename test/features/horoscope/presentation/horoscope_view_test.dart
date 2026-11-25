@@ -58,6 +58,35 @@ void main() {
     expect(find.byIcon(Icons.cloud_off), findsNothing);
   });
 
+  testWidgets('heart saves the loaded reading', (tester) async {
+    final favorites = favoritesCubitWith();
+    when(() => favorites.toggle(reading)).thenAnswer((_) async {});
+    when(() => bloc.state).thenReturn(
+      HoroscopeState(
+        period: HoroscopePeriod.daily,
+        status: HoroscopeStatus.success,
+        horoscope: reading,
+      ),
+    );
+    await tester.pumpLocalized(
+      BlocProvider<HoroscopeBloc>.value(
+        value: bloc,
+        child: const HoroscopeView(),
+      ),
+      favorites: favorites,
+    );
+
+    await tester.tap(find.byTooltip('Save to favorites'));
+    await tester.pump();
+    verify(() => favorites.toggle(reading)).called(1);
+    expect(find.text('Saved to favorites'), findsOneWidget);
+  });
+
+  testWidgets('no heart while nothing is loaded', (tester) async {
+    await pump(tester, const HoroscopeState(period: HoroscopePeriod.daily));
+    expect(find.byTooltip('Save to favorites'), findsNothing);
+  });
+
   testWidgets('flags stale readings shown while offline', (tester) async {
     await pump(
       tester,

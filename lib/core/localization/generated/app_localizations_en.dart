@@ -334,6 +334,29 @@ class AppLocalizationsEn extends AppLocalizations {
       'Tap the heart on a horoscope to keep it here.';
 
   @override
+  String get favoritesAdd => 'Save to favorites';
+
+  @override
+  String get favoritesRemove => 'Remove from favorites';
+
+  @override
+  String get favoritesAdded => 'Saved to favorites';
+
+  @override
+  String get favoritesRemoved => 'Removed from favorites';
+
+  @override
+  String favoritesSavedOn(String date) {
+    return 'Saved on $date';
+  }
+
+  @override
+  String get favoritesNotFound => 'This favorite no longer exists.';
+
+  @override
+  String get actionUndo => 'Undo';
+
+  @override
   String get profileTitle => 'Profile';
 
   @override

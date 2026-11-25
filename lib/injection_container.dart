@@ -6,6 +6,10 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'core/constants/api_constants.dart';
 import 'core/network/api_client.dart';
 import 'core/router/app_router.dart';
+import 'features/favorites/data/datasources/favorites_local_data_source.dart';
+import 'features/favorites/data/repositories/favorites_repository_impl.dart';
+import 'features/favorites/domain/repositories/favorites_repository.dart';
+import 'features/favorites/presentation/cubit/favorites_cubit.dart';
 import 'features/horoscope/data/datasources/free_horoscope_api_data_source.dart';
 import 'features/horoscope/data/datasources/horoscope_local_data_source.dart';
 import 'features/horoscope/data/datasources/horoscope_remote_data_source.dart';
@@ -51,6 +55,7 @@ Future<void> initDependencies() async {
 
   _initHoroscope();
   _initProfile();
+  _initFavorites();
 }
 
 void _initHoroscope() {
@@ -83,4 +88,13 @@ void _initProfile() {
     ..registerLazySingleton<TimeZoneResolver>(TzTimeZoneResolver.new)
     ..registerLazySingleton(() => NatalCalculator(sl()))
     ..registerFactory(() => ProfileCubit(repository: sl(), calculator: sl()));
+}
+
+void _initFavorites() {
+  sl
+    ..registerLazySingleton(() => FavoritesLocalDataSource(sl()))
+    ..registerLazySingleton<FavoritesRepository>(
+      () => FavoritesRepositoryImpl(sl()),
+    )
+    ..registerFactory(() => FavoritesCubit(repository: sl()));
 }

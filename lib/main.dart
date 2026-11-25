@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 import 'app.dart';
+import 'features/favorites/presentation/cubit/favorites_cubit.dart';
 import 'features/profile/presentation/cubit/profile_cubit.dart';
 import 'core/bloc/app_bloc_observer.dart';
 import 'core/utils/asset_licenses.dart';
@@ -15,8 +16,11 @@ Future<void> main() async {
   registerAssetLicenses();
   await initDependencies();
   runApp(
-    BlocProvider(
-      create: (_) => sl<ProfileCubit>()..load(),
+    MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (_) => sl<ProfileCubit>()..load()),
+        BlocProvider(create: (_) => sl<FavoritesCubit>()..load()),
+      ],
       child: MysticApp(router: sl<GoRouter>()),
     ),
   );

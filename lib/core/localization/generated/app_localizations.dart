@@ -682,6 +682,48 @@ abstract class AppLocalizations {
   /// **'Tap the heart on a horoscope to keep it here.'**
   String get favoritesEmptyBody;
 
+  /// No description provided for @favoritesAdd.
+  ///
+  /// In en, this message translates to:
+  /// **'Save to favorites'**
+  String get favoritesAdd;
+
+  /// No description provided for @favoritesRemove.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove from favorites'**
+  String get favoritesRemove;
+
+  /// No description provided for @favoritesAdded.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved to favorites'**
+  String get favoritesAdded;
+
+  /// No description provided for @favoritesRemoved.
+  ///
+  /// In en, this message translates to:
+  /// **'Removed from favorites'**
+  String get favoritesRemoved;
+
+  /// No description provided for @favoritesSavedOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved on {date}'**
+  String favoritesSavedOn(String date);
+
+  /// No description provided for @favoritesNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'This favorite no longer exists.'**
+  String get favoritesNotFound;
+
+  /// No description provided for @actionUndo.
+  ///
+  /// In en, this message translates to:
+  /// **'Undo'**
+  String get actionUndo;
+
   /// No description provided for @profileTitle.
   ///
   /// In en, this message translates to:

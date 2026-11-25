@@ -149,6 +149,20 @@
   "favoritesTitle": "Favorites",
   "favoritesEmptyTitle": "No favorites yet",
   "favoritesEmptyBody": "Tap the heart on a horoscope to keep it here.",
+  "favoritesAdd": "Save to favorites",
+  "favoritesRemove": "Remove from favorites",
+  "favoritesAdded": "Saved to favorites",
+  "favoritesRemoved": "Removed from favorites",
+  "favoritesSavedOn": "Saved on {date}",
+  "@favoritesSavedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "favoritesNotFound": "This favorite no longer exists.",
+  "actionUndo": "Undo",
   "profileTitle": "Profile",
   "profileEmptyTitle": "Your astrological profile",
   "profileEmptyBody": "Add your birth details to discover your Sun, Moon and Rising signs.",

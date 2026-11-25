@@ -12,4 +12,7 @@ abstract final class AppRoutes {
 
   static String signDetail(String signId) => '$signs/$signId';
   static String horoscope(String signId) => '$signs/$signId/horoscope';
+
+  static const favoriteIdParam = 'favoriteId';
+  static String favoriteDetail(String id) => '$favorites/$id';
 }

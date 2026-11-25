@@ -9,6 +9,7 @@ import '../../../../core/theme/app_colors.dart';
 import '../../../../core/widgets/glass_card.dart';
 import '../../../../core/widgets/skeleton_lines.dart';
 import '../../../../injection_container.dart';
+import '../../../favorites/presentation/widgets/favorite_button.dart';
 import '../../../zodiac/domain/entities/zodiac_sign.dart';
 import '../../../zodiac/presentation/widgets/zodiac_glyph.dart';
 import '../../../zodiac/presentation/zodiac_l10n.dart';
@@ -53,6 +54,15 @@ class HoroscopeView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(l10n.horoscopeTitle(sign.localizedName(l10n))),
+        actions: [
+          // Only a loaded reading can be saved.
+          BlocSelector<HoroscopeBloc, HoroscopeState, Horoscope?>(
+            selector: (state) => state.horoscope,
+            builder: (context, horoscope) => horoscope == null
+                ? const SizedBox.shrink()
+                : FavoriteButton(horoscope: horoscope),
+          ),
+        ],
       ),
       body: RefreshIndicator(
         color: AppColors.gold,

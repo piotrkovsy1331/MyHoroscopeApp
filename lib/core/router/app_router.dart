@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../features/favorites/presentation/pages/favorite_detail_page.dart';
 import '../../features/favorites/presentation/pages/favorites_page.dart';
 import '../../features/horoscope/presentation/pages/horoscope_page.dart';
 import '../../features/profile/domain/usecases/search_places.dart';
@@ -65,6 +66,15 @@ GoRouter createAppRouter({
             GoRoute(
               path: AppRoutes.favorites,
               builder: (context, state) => const FavoritesPage(),
+              routes: [
+                GoRoute(
+                  path: ':${AppRoutes.favoriteIdParam}',
+                  builder: (context, state) => FavoriteDetailPage(
+                    favoriteId:
+                        state.pathParameters[AppRoutes.favoriteIdParam]!,
+                  ),
+                ),
+              ],
             ),
           ],
         ),
