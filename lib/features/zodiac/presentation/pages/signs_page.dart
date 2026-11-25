@@ -13,7 +13,11 @@ class SignsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.sizeOf(context).width;
-    final columns = width >= 600 ? 4 : 3;
+    final textScale = MediaQuery.textScalerOf(context).scale(1);
+    // Fewer, taller tiles for large accessibility text sizes.
+    final columns = width >= 600 ? 4 : (textScale > 1.3 ? 2 : 3);
+    // Glyph + paddings are fixed; the two text lines grow with the scale.
+    final tileHeight = 96 + 44 * textScale;
 
     return Scaffold(
       appBar: AppBar(title: Text(context.l10n.signsTitle)),
@@ -23,7 +27,7 @@ class SignsPage extends StatelessWidget {
           crossAxisCount: columns,
           mainAxisSpacing: 12,
           crossAxisSpacing: 12,
-          childAspectRatio: 0.82,
+          mainAxisExtent: tileHeight,
         ),
         itemCount: ZodiacSign.values.length,
         itemBuilder: (context, index) {
