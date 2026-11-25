@@ -20,6 +20,37 @@ extension ZodiacSignL10n on ZodiacSign {
     ZodiacSign.pisces => l10n.signPisces,
   };
 
+  String localizedKeywords(AppLocalizations l10n) => switch (this) {
+    ZodiacSign.aries => l10n.signAriesKeywords,
+    ZodiacSign.taurus => l10n.signTaurusKeywords,
+    ZodiacSign.gemini => l10n.signGeminiKeywords,
+    ZodiacSign.cancer => l10n.signCancerKeywords,
+    ZodiacSign.leo => l10n.signLeoKeywords,
+    ZodiacSign.virgo => l10n.signVirgoKeywords,
+    ZodiacSign.libra => l10n.signLibraKeywords,
+    ZodiacSign.scorpio => l10n.signScorpioKeywords,
+    ZodiacSign.sagittarius => l10n.signSagittariusKeywords,
+    ZodiacSign.capricorn => l10n.signCapricornKeywords,
+    ZodiacSign.aquarius => l10n.signAquariusKeywords,
+    ZodiacSign.pisces => l10n.signPiscesKeywords,
+  };
+
+  /// Short personality portrait (app-authored content).
+  String localizedDescription(AppLocalizations l10n) => switch (this) {
+    ZodiacSign.aries => l10n.signAriesDescription,
+    ZodiacSign.taurus => l10n.signTaurusDescription,
+    ZodiacSign.gemini => l10n.signGeminiDescription,
+    ZodiacSign.cancer => l10n.signCancerDescription,
+    ZodiacSign.leo => l10n.signLeoDescription,
+    ZodiacSign.virgo => l10n.signVirgoDescription,
+    ZodiacSign.libra => l10n.signLibraDescription,
+    ZodiacSign.scorpio => l10n.signScorpioDescription,
+    ZodiacSign.sagittarius => l10n.signSagittariusDescription,
+    ZodiacSign.capricorn => l10n.signCapricornDescription,
+    ZodiacSign.aquarius => l10n.signAquariusDescription,
+    ZodiacSign.pisces => l10n.signPiscesDescription,
+  };
+
   /// e.g. "Mar 21 – Apr 19" in the UI locale.
   String localizedDateRange(AppLocalizations l10n) {
     final format = DateFormat.MMMd(l10n.localeName);

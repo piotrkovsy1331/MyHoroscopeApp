@@ -436,6 +436,156 @@ abstract class AppLocalizations {
   /// **'Read horoscope'**
   String get signDetailReadHoroscope;
 
+  /// No description provided for @signDetailPersonality.
+  ///
+  /// In en, this message translates to:
+  /// **'Personality'**
+  String get signDetailPersonality;
+
+  /// No description provided for @signAriesKeywords.
+  ///
+  /// In en, this message translates to:
+  /// **'Courageous · Energetic · Direct'**
+  String get signAriesKeywords;
+
+  /// No description provided for @signAriesDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'The first sign of the zodiac, Aries charges ahead with the spark of new beginnings. Ruled by Mars, it is bold, competitive and quick to act, at its best when leading the way or taking on a challenge. Patience is its lifelong lesson.'**
+  String get signAriesDescription;
+
+  /// No description provided for @signTaurusKeywords.
+  ///
+  /// In en, this message translates to:
+  /// **'Steady · Sensual · Loyal'**
+  String get signTaurusKeywords;
+
+  /// No description provided for @signTaurusDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Taurus values comfort, beauty and things that last. Ruled by Venus, it moves at its own unhurried pace, building security through patience and persistence. Dependable and devoted, it can also be wonderfully stubborn.'**
+  String get signTaurusDescription;
+
+  /// No description provided for @signGeminiKeywords.
+  ///
+  /// In en, this message translates to:
+  /// **'Curious · Witty · Adaptable'**
+  String get signGeminiKeywords;
+
+  /// No description provided for @signGeminiDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Gemini lives for ideas, conversation and variety. Ruled by Mercury, it learns fast, connects people and sees every side of a story. Its restless mind thrives on novelty, though focus can be a challenge.'**
+  String get signGeminiDescription;
+
+  /// No description provided for @signCancerKeywords.
+  ///
+  /// In en, this message translates to:
+  /// **'Caring · Intuitive · Protective'**
+  String get signCancerKeywords;
+
+  /// No description provided for @signCancerDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancer is the zodiac\'s nurturer, guided by the Moon and deep feeling. It treasures home, family and memories, and protects loved ones fiercely. Beneath its sensitive shell lies remarkable emotional strength.'**
+  String get signCancerDescription;
+
+  /// No description provided for @signLeoKeywords.
+  ///
+  /// In en, this message translates to:
+  /// **'Warm · Generous · Expressive'**
+  String get signLeoKeywords;
+
+  /// No description provided for @signLeoDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Ruled by the Sun, Leo shines with warmth, creativity and confidence. It loves to celebrate, to perform and to lift others up with big-hearted loyalty. Recognition fuels it, and pride can be its blind spot.'**
+  String get signLeoDescription;
+
+  /// No description provided for @signVirgoKeywords.
+  ///
+  /// In en, this message translates to:
+  /// **'Thoughtful · Precise · Helpful'**
+  String get signVirgoKeywords;
+
+  /// No description provided for @signVirgoDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Virgo notices the details others miss. Ruled by Mercury, it brings clear thinking, practical skill and a genuine wish to be useful. It strives for improvement in everything, and learning to be gentle with itself matters.'**
+  String get signVirgoDescription;
+
+  /// No description provided for @signLibraKeywords.
+  ///
+  /// In en, this message translates to:
+  /// **'Harmonious · Charming · Fair'**
+  String get signLibraKeywords;
+
+  /// No description provided for @signLibraDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Libra seeks balance, beauty and fairness in every relationship. Ruled by Venus, it is diplomatic, sociable and gifted at seeing both sides. Decisions can take time, because it wants the outcome to feel right for everyone.'**
+  String get signLibraDescription;
+
+  /// No description provided for @signScorpioKeywords.
+  ///
+  /// In en, this message translates to:
+  /// **'Intense · Loyal · Perceptive'**
+  String get signScorpioKeywords;
+
+  /// No description provided for @signScorpioDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Scorpio feels everything deeply and sees beneath the surface. Associated with Pluto and Mars, it is magnetic, determined and fiercely loyal. It values trust above all, and its power lies in transformation.'**
+  String get signScorpioDescription;
+
+  /// No description provided for @signSagittariusKeywords.
+  ///
+  /// In en, this message translates to:
+  /// **'Adventurous · Optimistic · Free-spirited'**
+  String get signSagittariusKeywords;
+
+  /// No description provided for @signSagittariusDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Sagittarius is the zodiac\'s explorer, always seeking the next horizon. Ruled by Jupiter, it is enthusiastic, philosophical and honest to the point of bluntness. Freedom and meaning keep its fire burning.'**
+  String get signSagittariusDescription;
+
+  /// No description provided for @signCapricornKeywords.
+  ///
+  /// In en, this message translates to:
+  /// **'Ambitious · Disciplined · Responsible'**
+  String get signCapricornKeywords;
+
+  /// No description provided for @signCapricornDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Capricorn climbs steadily toward its goals. Ruled by Saturn, it is practical, patient and serious about its commitments, with a dry sense of humour. Success is built step by step, and rest must be earned and learned.'**
+  String get signCapricornDescription;
+
+  /// No description provided for @signAquariusKeywords.
+  ///
+  /// In en, this message translates to:
+  /// **'Original · Independent · Humanitarian'**
+  String get signAquariusKeywords;
+
+  /// No description provided for @signAquariusDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Aquarius thinks ahead of its time. Associated with Uranus and Saturn, it is inventive, principled and devoted to friends and causes. It prizes independence and may seem detached, yet it cares about the bigger picture.'**
+  String get signAquariusDescription;
+
+  /// No description provided for @signPiscesKeywords.
+  ///
+  /// In en, this message translates to:
+  /// **'Imaginative · Compassionate · Dreamy'**
+  String get signPiscesKeywords;
+
+  /// No description provided for @signPiscesDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'The final sign, Pisces flows between reality and imagination. Associated with Neptune and Jupiter, it is empathetic, artistic and deeply intuitive. It absorbs the feelings around it, so healthy boundaries help it thrive.'**
+  String get signPiscesDescription;
+
   /// No description provided for @horoscopeTitle.
   ///
   /// In en, this message translates to:

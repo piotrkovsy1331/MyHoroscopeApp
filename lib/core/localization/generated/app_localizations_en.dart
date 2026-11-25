@@ -188,6 +188,94 @@ class AppLocalizationsEn extends AppLocalizations {
   String get signDetailReadHoroscope => 'Read horoscope';
 
   @override
+  String get signDetailPersonality => 'Personality';
+
+  @override
+  String get signAriesKeywords => 'Courageous · Energetic · Direct';
+
+  @override
+  String get signAriesDescription =>
+      'The first sign of the zodiac, Aries charges ahead with the spark of new beginnings. Ruled by Mars, it is bold, competitive and quick to act, at its best when leading the way or taking on a challenge. Patience is its lifelong lesson.';
+
+  @override
+  String get signTaurusKeywords => 'Steady · Sensual · Loyal';
+
+  @override
+  String get signTaurusDescription =>
+      'Taurus values comfort, beauty and things that last. Ruled by Venus, it moves at its own unhurried pace, building security through patience and persistence. Dependable and devoted, it can also be wonderfully stubborn.';
+
+  @override
+  String get signGeminiKeywords => 'Curious · Witty · Adaptable';
+
+  @override
+  String get signGeminiDescription =>
+      'Gemini lives for ideas, conversation and variety. Ruled by Mercury, it learns fast, connects people and sees every side of a story. Its restless mind thrives on novelty, though focus can be a challenge.';
+
+  @override
+  String get signCancerKeywords => 'Caring · Intuitive · Protective';
+
+  @override
+  String get signCancerDescription =>
+      'Cancer is the zodiac\'s nurturer, guided by the Moon and deep feeling. It treasures home, family and memories, and protects loved ones fiercely. Beneath its sensitive shell lies remarkable emotional strength.';
+
+  @override
+  String get signLeoKeywords => 'Warm · Generous · Expressive';
+
+  @override
+  String get signLeoDescription =>
+      'Ruled by the Sun, Leo shines with warmth, creativity and confidence. It loves to celebrate, to perform and to lift others up with big-hearted loyalty. Recognition fuels it, and pride can be its blind spot.';
+
+  @override
+  String get signVirgoKeywords => 'Thoughtful · Precise · Helpful';
+
+  @override
+  String get signVirgoDescription =>
+      'Virgo notices the details others miss. Ruled by Mercury, it brings clear thinking, practical skill and a genuine wish to be useful. It strives for improvement in everything, and learning to be gentle with itself matters.';
+
+  @override
+  String get signLibraKeywords => 'Harmonious · Charming · Fair';
+
+  @override
+  String get signLibraDescription =>
+      'Libra seeks balance, beauty and fairness in every relationship. Ruled by Venus, it is diplomatic, sociable and gifted at seeing both sides. Decisions can take time, because it wants the outcome to feel right for everyone.';
+
+  @override
+  String get signScorpioKeywords => 'Intense · Loyal · Perceptive';
+
+  @override
+  String get signScorpioDescription =>
+      'Scorpio feels everything deeply and sees beneath the surface. Associated with Pluto and Mars, it is magnetic, determined and fiercely loyal. It values trust above all, and its power lies in transformation.';
+
+  @override
+  String get signSagittariusKeywords =>
+      'Adventurous · Optimistic · Free-spirited';
+
+  @override
+  String get signSagittariusDescription =>
+      'Sagittarius is the zodiac\'s explorer, always seeking the next horizon. Ruled by Jupiter, it is enthusiastic, philosophical and honest to the point of bluntness. Freedom and meaning keep its fire burning.';
+
+  @override
+  String get signCapricornKeywords => 'Ambitious · Disciplined · Responsible';
+
+  @override
+  String get signCapricornDescription =>
+      'Capricorn climbs steadily toward its goals. Ruled by Saturn, it is practical, patient and serious about its commitments, with a dry sense of humour. Success is built step by step, and rest must be earned and learned.';
+
+  @override
+  String get signAquariusKeywords => 'Original · Independent · Humanitarian';
+
+  @override
+  String get signAquariusDescription =>
+      'Aquarius thinks ahead of its time. Associated with Uranus and Saturn, it is inventive, principled and devoted to friends and causes. It prizes independence and may seem detached, yet it cares about the bigger picture.';
+
+  @override
+  String get signPiscesKeywords => 'Imaginative · Compassionate · Dreamy';
+
+  @override
+  String get signPiscesDescription =>
+      'The final sign, Pisces flows between reality and imagination. Associated with Neptune and Jupiter, it is empathetic, artistic and deeply intuitive. It absorbs the feelings around it, so healthy boundaries help it thrive.';
+
+  @override
   String horoscopeTitle(String sign) {
     return '$sign horoscope';
   }

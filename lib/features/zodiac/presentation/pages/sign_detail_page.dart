@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../core/localization/l10n_extension.dart';
 import '../../../../core/router/app_routes.dart';
+import '../../../../core/theme/app_colors.dart';
 import '../../../../core/widgets/constellation_view.dart';
 import '../../../../core/widgets/fade_slide_in.dart';
 import '../../../../core/widgets/glass_card.dart';
@@ -81,9 +82,36 @@ class SignDetailPage extends StatelessWidget {
               ),
             ),
           ),
+          const SizedBox(height: 16),
+          FadeSlideIn(
+            delay: const Duration(milliseconds: 250),
+            child: GlassCard(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    l10n.signDetailPersonality,
+                    style: theme.textTheme.titleLarge,
+                  ),
+                  const SizedBox(height: 6),
+                  Text(
+                    sign.localizedKeywords(l10n),
+                    style: theme.textTheme.labelLarge?.copyWith(
+                      color: AppColors.gold,
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  Text(
+                    sign.localizedDescription(l10n),
+                    style: theme.textTheme.bodyLarge,
+                  ),
+                ],
+              ),
+            ),
+          ),
           const SizedBox(height: 24),
           FadeSlideIn(
-            delay: const Duration(milliseconds: 300),
+            delay: const Duration(milliseconds: 350),
             child: Center(
               child: FilledButton.icon(
                 onPressed: () => context.push(AppRoutes.horoscope(sign.id)),
