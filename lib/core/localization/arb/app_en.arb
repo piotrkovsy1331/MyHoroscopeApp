@@ -1,0 +1,11 @@
+{
+  "@@locale": "en",
+  "appTitle": "Mystic Horoscope",
+  "@appTitle": {
+    "description": "Application name shown in the OS task switcher and headers."
+  },
+  "homeWelcome": "The stars are aligning…",
+  "@homeWelcome": {
+    "description": "Temporary greeting on the home screen until the real UI lands."
+  }
+}
