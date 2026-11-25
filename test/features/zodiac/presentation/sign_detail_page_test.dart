@@ -23,6 +23,7 @@ void main() {
     expect(find.text('Pisces'), findsOneWidget);
     expect(find.text('Water'), findsOneWidget);
     expect(find.text('Neptune'), findsOneWidget);
+    await tester.scrollUntilVisible(find.text('Personality'), 200);
     expect(find.text('Personality'), findsOneWidget);
     expect(find.text('Imaginative · Compassionate · Dreamy'), findsOneWidget);
   });

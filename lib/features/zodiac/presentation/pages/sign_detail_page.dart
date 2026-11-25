@@ -60,6 +60,18 @@ class SignDetailPage extends StatelessWidget {
             textAlign: TextAlign.center,
             style: theme.textTheme.bodyMedium,
           ),
+          const SizedBox(height: 20),
+          // Primary action stays above the fold on small phones.
+          FadeSlideIn(
+            delay: const Duration(milliseconds: 100),
+            child: Center(
+              child: FilledButton.icon(
+                onPressed: () => context.push(AppRoutes.horoscope(sign.id)),
+                icon: const Icon(Icons.auto_awesome),
+                label: Text(l10n.signDetailReadHoroscope),
+              ),
+            ),
+          ),
           const SizedBox(height: 24),
           FadeSlideIn(
             delay: const Duration(milliseconds: 150),
@@ -106,17 +118,6 @@ class SignDetailPage extends StatelessWidget {
                     style: theme.textTheme.bodyLarge,
                   ),
                 ],
-              ),
-            ),
-          ),
-          const SizedBox(height: 24),
-          FadeSlideIn(
-            delay: const Duration(milliseconds: 350),
-            child: Center(
-              child: FilledButton.icon(
-                onPressed: () => context.push(AppRoutes.horoscope(sign.id)),
-                icon: const Icon(Icons.auto_awesome),
-                label: Text(l10n.signDetailReadHoroscope),
               ),
             ),
           ),
